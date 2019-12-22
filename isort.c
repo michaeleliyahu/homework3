@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-int ARR[length];
-int ARR2[length2];
+int ARR[LENGTH];
+int ARR2[LENGTH2];
 void shift_element(int *arr, int i)
 {
     // printf("arr+i = %d\n\n", *(arr + i));
@@ -30,7 +30,7 @@ void shift_element(int *arr, int i)
 void insertion_sort(int *arr, int len)
 {
     int i = 1;
-    while (i < length2)
+    while (i < LENGTH2)
     {
         int f = 1;
         // printf("    I : %d     F : %d" , i , f);

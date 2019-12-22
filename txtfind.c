@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include "txtfind.h"
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-int ARR[length];
-int ARR2[length2];
+int ARR[LENGTH];
+int ARR2[LENGTH2];
 int print_line(char str[])
 {
     char h = getc(stdin);
@@ -170,4 +171,5 @@ int print_line(char str[])
             x1++;
         }
     }
+    return 0;
 }
