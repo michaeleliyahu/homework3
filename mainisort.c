@@ -17,18 +17,27 @@ int main()
         counter++;
     } while (counter < LENGTH2);
 
-    printf("\n\n");
-    for (int f = 0; f < LENGTH2; f++)
-    {
-        printf("%d , ", ARR2[f]);
-    }
+    // printf("\n\n");
+    // for (int f = 0; f < LENGTH2; f++)
+    // {
+    //     printf("%d , ", ARR2[f]);
+    // }
 
     int *P = &ARR2[0];
     insertion_sort(P, LENGTH2);
 
-    printf("\n\n");
+    printf("\n");
+    printf("array after sort:\n");
     for (int f = 0; f < LENGTH2; f++)
     {
-        printf("%d , ", ARR2[f]);
+        if (f==LENGTH2-1)
+        {
+             printf("%d  ", ARR2[f]);
+        }
+        else
+        {
+             printf("%d , ", ARR2[f]);
+        }
     }
+    printf("\n");
 }

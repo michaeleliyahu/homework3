@@ -30,7 +30,7 @@ int print_line(char str[])
         }
         line++;
     }
-   // printf("countline = %d\n ", countline);
+    // printf("countline = %d\n ", countline);
 
     int i = 0;
     int j = 0;
@@ -41,14 +41,14 @@ int print_line(char str[])
         if (str[f] == '\n')
         {
             matrix[j][i] = str[f];
-            printf("\n");
+            //printf("\n");
             i = 0;
             j++;
         }
         else
         {
             matrix[j][i] = str[f];
-            printf("%c", matrix[j][i]);
+            //printf("%c", matrix[j][i]);
             i++;
         }
         f++;
@@ -66,11 +66,11 @@ int print_line(char str[])
     while (k < ch)
     {
         word[k] = matrix[0][k];
-        printf("%c", word[k]);
+        // printf("%c", word[k]);
         k++;
     }
     //printf("%d", ch);
-    printf("\n%c\n", tav);
+    //printf("\n%c\n", tav);
     //  printf("%c \n", matrix[2][23]);
     if (tav == 'a')
     {
@@ -86,6 +86,17 @@ int print_line(char str[])
             // printf("**");
             while (haveword == false && (matrix[x1][x2] != '\n') && (matrix[x1][x2] != '\0'))
             {
+                int start = x2;
+                int end = x2;
+                while (start > 0 && matrix[x1][start - 1] != ' ')
+                {
+                    start--;
+                }
+                while (matrix[x1][end] != ' ' && matrix[x1][end] != '\n' && matrix[x1][end] != '\0')
+                {
+                    end++;
+                }
+                end++;
                 if (matrix[x1][x2] == ' ')
                 {
                     counter2 = 0;
@@ -98,17 +109,20 @@ int print_line(char str[])
                 }
                 if (counter2 == (ch))
                 {
-                    haveword = true;
-                    x2 = 0;
-                    while (matrix[x1][x2] != '\n' && (matrix[x1][x2] != '\0'))
+                    if ((end - start - 1) <= ch + 1)
                     {
-                        printf("%c", matrix[x1][x2]);
-                        x2++;
+                        haveword = true;
+                        x2 = 0;
+                        while (matrix[x1][x2] != '\n' && (matrix[x1][x2] != '\0'))
+                        {
+                            printf("%c", matrix[x1][x2]);
+                            x2++;
+                        }
+                        // printf("%d",x2);
+                        printf("\n");
+                        x2--;
+                        counter2 = 0;
                     }
-                    // printf("%d",x2);
-                    printf("\n");
-                    x2--;
-                    counter2 = 0;
                 }
                 x2++;
             }
@@ -152,17 +166,18 @@ int print_line(char str[])
                     end++;
                     //printf("\n start = %d ", start);
                     //printf("\n end = %d ", end);
-                    if ((end - start - 1) <= ch+1)
+                    if ((end - start - 1) <= ch + 1)
                     {
                         //printf("\n start = %d ", (end - start - 1));
-                       // printf("\n start = %d ", start);
-                       // printf("\n end = %d ", end);
-                        while (start +1 < end)
+                        // printf("\n start = %d ", start);
+                        // printf("\n end = %d ", end);
+                        while (start + 1 < end)
                         {
+                            
                             printf("%c", matrix[x1][start]);
                             start++;
                         }
-                        printf(", ");
+                        printf("  ");
                     }
                     counter2 = 0;
                 }
