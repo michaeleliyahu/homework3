@@ -177,7 +177,7 @@ int print_line(char str[])
                             printf("%c", matrix[x1][start]);
                             start++;
                         }
-                        printf("  ");
+                        printf("\n");
                     }
                     counter2 = 0;
                 }
